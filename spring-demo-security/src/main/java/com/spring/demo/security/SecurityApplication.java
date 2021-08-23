@@ -1,0 +1,16 @@
+package com.spring.demo.security;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author Major Tom
+ * @date 2021/8/23 17:42
+ * @description 启动类
+ */
+@SpringBootApplication
+public class SecurityApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SecurityApplication.class, args);
+    }
+}
