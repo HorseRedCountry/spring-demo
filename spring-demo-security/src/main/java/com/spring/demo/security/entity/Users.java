@@ -23,8 +23,8 @@ public class Users implements Serializable {
     @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
 
-    @TableField(value = "name")
-    private String name;
+    @TableField(value = "username")
+    private String userName;
 
     @TableField(value = "password")
     private String password;

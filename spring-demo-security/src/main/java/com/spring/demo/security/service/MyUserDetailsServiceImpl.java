@@ -27,14 +27,14 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
     private UsersMapper usersMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         QueryWrapper<Users> wrapper = new QueryWrapper<>();
-        wrapper.eq("name", name);
+        wrapper.eq("username", username);
         Users user = usersMapper.selectOne(wrapper);
         if (user == null) {
             throw new UsernameNotFoundException("用户名不存在！");
         }
         List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
-        return new User(user.getName(), new BCryptPasswordEncoder().encode(user.getPassword()), auths);
+        return new User(user.getUserName(), new BCryptPasswordEncoder().encode(user.getPassword()), auths);
     }
 }
