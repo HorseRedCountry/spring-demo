@@ -9,6 +9,7 @@
     <version>1.0.0</version>
     <modules>
         <module>spring-demo-security</module>
+        <module>spring-demo-jwt</module>
     </modules>
     <packaging>pom</packaging>
 
